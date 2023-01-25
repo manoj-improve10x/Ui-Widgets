@@ -21,9 +21,9 @@ public class ToggleButtonActivity extends AppCompatActivity {
 
     private void handleToggleButton() {
         binding.submit.setOnClickListener(v -> {
-             binding.toggleBtn.getText();
-            binding.toggleBtn2.getText();
-            Toast.makeText(this, "toggle:", Toast.LENGTH_SHORT).show();
+            String button1 =  binding.toggleBtn.getText().toString();
+            String button2 = binding.toggleBtn2.getText().toString();
+            Toast.makeText(this, "toggle1:" + button1 + "\ntoggle2:" + button2 , Toast.LENGTH_SHORT).show();
         });
     }
 }
