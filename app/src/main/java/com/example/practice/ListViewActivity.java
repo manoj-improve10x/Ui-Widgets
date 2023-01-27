@@ -34,12 +34,12 @@ public class ListViewActivity extends AppCompatActivity {
        stringArrayList.add("raghu");
        stringArrayList.add("manu");
        stringArrayList.add("raju");
-        stringArrayList.add("name");
-        stringArrayList.add("ramu");
-        stringArrayList.add("renu");
-        stringArrayList.add("raghu");
-        stringArrayList.add("manu");
-        stringArrayList.add("raju");
+       stringArrayList.add("name");
+       stringArrayList.add("ramu");
+       stringArrayList.add("renu");
+       stringArrayList.add("raghu");
+       stringArrayList.add("manu");
+       stringArrayList.add("raju");
     }
 
     private void displayListView() {
