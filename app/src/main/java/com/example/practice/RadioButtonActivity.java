@@ -22,15 +22,25 @@ public class RadioButtonActivity extends AppCompatActivity {
 
     private void handleRadioButton() {
         binding.submit.setOnClickListener(v -> {
-            if(binding.radioButton.isChecked()){
-                Toast.makeText(this, "wrong", Toast.LENGTH_SHORT).show();
-            } else if(binding.radioButton2.isChecked()) {
-                Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
-            } else if(binding.radioButton3.isChecked()){
-                Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
-            } else if(binding.radioButton4.isChecked()) {
-                Toast.makeText(this, "wrong", Toast.LENGTH_SHORT).show();
-            }
+            boolean rB1 = binding.radioButton.isChecked();
+            boolean rb2 = binding.radioButton2.isChecked();
+            boolean rb3 = binding.radioButton3.isChecked();
+            boolean rb4 = binding.radioButton4.isChecked();
+            String result = getCountryName(rB1, rb2,rb3,rb4);
+            Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
         });
+    }
+    private String getCountryName(boolean a, boolean b, boolean c, boolean d) {
+        String result = "Country Name :";
+        if(a) {
+            result += "France";
+        } if(b) {
+            result += "U.K";
+        } if(c) {
+            result += "India";
+        } if(d) {
+            result += "U.S.A";
+        }
+        return result;
     }
 }
