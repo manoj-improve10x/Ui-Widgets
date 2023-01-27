@@ -23,7 +23,16 @@ public class DatePickerActivity extends AppCompatActivity {
             int date = binding.datePicker.getDayOfMonth();
             int month = binding.datePicker.getMonth();
             int year = binding.datePicker.getYear();
-            binding.date.setText(date +"/"+ month +"/" + year);
+            String result = getData(date,month, year);
+            binding.date.setText(result);
         });
+    }
+
+    private String getData(int date, int month, int year) {
+        String currentDate = String.valueOf(date);
+        String currentMonth = String.valueOf(month);
+        String currentYear = String.valueOf(year);
+        String currentData = "current Date :" + currentDate + " - " + currentMonth + " - " + currentYear;
+        return currentData;
     }
 }
