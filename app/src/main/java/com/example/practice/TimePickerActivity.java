@@ -25,7 +25,15 @@ public class TimePickerActivity extends AppCompatActivity {
             binding.timePicker.setIs24HourView(false);
             int time = binding.timePicker.getHour();
             int minute = binding.timePicker.getMinute();
-            binding.time.setText(time+ ":" + minute);
+            String result = getTimeData(time,minute);
+            binding.time.setText(result);
         });
+    }
+
+    private String getTimeData(int time, int minute) {
+        String currentTime = String.valueOf(time);
+        String currentMinute = String.valueOf(minute);
+        String currentTimeData = "Current Time :" + currentTime + " :" + currentMinute;
+        return currentTimeData;
     }
 }
