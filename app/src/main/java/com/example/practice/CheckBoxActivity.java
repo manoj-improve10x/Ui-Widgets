@@ -26,11 +26,31 @@ public class CheckBoxActivity extends AppCompatActivity {
             boolean cb2 = binding.checkBox5.isChecked();
             boolean cb3 = binding.checkBox6.isChecked();
             boolean cb4 = binding.checkBox7.isChecked();
-            if(cb == true && cb2 == false && cb3 == true && cb4 == false) {
-                Toast.makeText(this, "Your answer is correct", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Your answer is wrong", Toast.LENGTH_SHORT).show();
-            }
+            String orderDetails = placeOrder(cb,cb2,cb3,cb4);
+            Toast.makeText(this,orderDetails, Toast.LENGTH_SHORT).show();
         });
+    }
+
+    private String placeOrder( boolean a, boolean b, boolean c, boolean d){
+        int totalAmount = 0;
+        String result= ("Select Items:");
+        if (a) {
+            result +="\nPizza 100Rs";
+            totalAmount += 100;
+        }
+        if (b) {
+            result +="\nCoffee 50Rs";
+            totalAmount += 50;
+        }
+        if (c) {
+            result +="\nBurger 120Rs";
+            totalAmount += 120;
+        }
+        if(d) {
+            result += "\n boost 150Rs";
+            totalAmount += 70;
+        }
+        result += "\nTotal: " + totalAmount + "Rs";
+        return result;
     }
 }
