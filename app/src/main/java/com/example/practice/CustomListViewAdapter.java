@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.practice.databinding.ListviewItemBinding;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -23,14 +24,11 @@ public class CustomListViewAdapter extends ArrayAdapter<Name>{
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.listview_item,parent,false);
+        ListviewItemBinding binding = ListviewItemBinding.inflate(LayoutInflater.from(getContext()),parent,false);
         Name names = getItem(position);
-        TextView name = view.findViewById(R.id.name);
-        name.setText(names.name);
-        TextView message = view.findViewById(R.id.msg);
-        message.setText(names.msg);
-        ImageView img = view.findViewById(R.id.image);
-        Picasso.get().load(names.imageUrl).into(img);
-        return view;
+        binding.name.setText(names.name);
+        binding.msg.setText(names.msg);
+        Picasso.get().load(names.imageUrl).into(binding.image);
+        return binding.getRoot();
     }
 }

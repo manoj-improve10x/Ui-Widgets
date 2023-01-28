@@ -31,7 +31,7 @@ public class CustomListViewActivity extends AppCompatActivity {
         Name name = new Name();
         name.name = "java";
         name.msg = "hi";
-        name.imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/MS-Exec-Nadella-Satya-2017-08-31-22_%28cropped%29.jpg/1200px-MS-Exec-Nadella-Satya-2017-08-31-22_%28cropped%29.jpg";
+        name.imageUrl = "https://www.shutterstock.com/image-photo/portrait-smiling-red-haired-millennial-260nw-1194497251.jpg";
         arrayList.add(name);
         arrayList.add(name);
         arrayList.add(name);
@@ -44,5 +44,6 @@ public class CustomListViewActivity extends AppCompatActivity {
     private void handleListView() {
         adapter = new CustomListViewAdapter(this,R.layout.listview_item,arrayList);
         binding.listView.setAdapter(adapter);
+        Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show();
     }
 }
